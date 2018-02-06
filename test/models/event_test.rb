@@ -13,6 +13,7 @@
 #  time_zone   :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  event_id    :string
 #
 
 require 'test_helper'

@@ -9,6 +9,6 @@ export const login = (user) => {
 export const logout = () => {
   return $.ajax({
     method: "DELETE",
-    url: "/api/ses"
+    url: "/api/session"
   })
 }

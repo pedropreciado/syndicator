@@ -2,19 +2,19 @@ let path = require("path");
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/syndicator/.jsx",
+  entry: "./frontend/syndicator.jsx",
   output: {
     path: path.resolve(__dirname, "app", "assets", "javascripts"),
     filename: "bundle.js"
   },
   module: {
-    loader: [
+    loaders: [
       {
         test: [/\.jsx?$/, /\.js?$/],
         exclude: /node_modules/,
         loader: "babel-loader",
         query: {
-          presets: ["es2015", "react"]
+          presets: ["react"]
         }
       }
     ]

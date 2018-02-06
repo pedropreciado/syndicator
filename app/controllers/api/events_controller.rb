@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+class Api::EventsController < ApplicationController
   def create
   end
 
@@ -8,9 +8,9 @@ class EventsController < ApplicationController
   def update
   end
 
-  def index
+  def show
   end
 
-  def show
+  def index
   end
 end

@@ -9,6 +9,7 @@ class Api::EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.author_id = current_user.id
     if @event.save
+      @
       render "api/events/show", event: @event
     else
       render json: @event.errors.full_messages, status: 422

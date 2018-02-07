@@ -12,7 +12,7 @@ class EventForm extends React.Component {
         end_date: "",
         start_time: "18:00",
         end_time: "20:00",
-        time_zone: "UTC"
+        time_zone: "America/Los_Angeles"
     }
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

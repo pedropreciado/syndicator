@@ -10,11 +10,11 @@ class Api::EventsController < ApplicationController
     @event.author_id = current_user.id
     if @event.save
       Job.new({
-        name: @event.name
-        description: @event.description,
-        start_time: @event.start_time,
-        end_time: @event.end_time,
-        time_zone: @event.time_zone,
+        "name" => @event.name,
+        "description" => @event.description,
+        "start_time" => @event.start_time,
+        "end_time" => @event.end_time,
+        "time_zone" => @event.time_zone,
         }).save
       render "api/events/show", event: @event
     else

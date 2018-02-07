@@ -32,7 +32,7 @@ class SessionForm extends React.Component {
               value={this.state.username}
               onChange={this.update("username")}
               placeholder="user"
-              >
+              />
 
               <input
                 type={this.passwordText()}
@@ -50,9 +50,11 @@ class SessionForm extends React.Component {
 
           </form>
         </div>
-        
+
       </div>
     )
 
   }
 }
+
+export default withRouter(SessionForm);

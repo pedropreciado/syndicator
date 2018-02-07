@@ -21,6 +21,6 @@ const receiveCurrentUser = (user) => ({
 });
 
 const receiveErrors = (errors) => ({
-  type; RECEIVE_ERRORS,
+  type: RECEIVE_ERRORS,
   errors
 })

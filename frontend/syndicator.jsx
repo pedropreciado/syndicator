@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
         currentUser: window.currentUser
       }
     };
+    
+    store = configureStore(preloadedState);
     delete window.currentUser;
   } else {
     store = configureStore();

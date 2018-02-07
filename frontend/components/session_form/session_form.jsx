@@ -13,8 +13,24 @@ class SessionForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearField = this.clearField.bind(this);
   }
+
+    update(key) {
+    return (event) => {
+    this.setState({[key]: event.target.value})
+    }
+    }
+
+    componentWillReceiveProps(newProps) {
+    this.setState({errors: [newProps.errors]})
+    }
+
+
+    handleSubmit(event) {
+    event.preventDefault();
+    this.props.action(this.state).then(() => this.props.history.push("/"));
+    }
+
 
   render() {
 
@@ -35,7 +51,7 @@ class SessionForm extends React.Component {
               />
 
               <input
-                type={this.passwordText()}
+                type="text"
                 value={this.state.password}
                 onChange={this.update("password")}
                 placeholder="password"

@@ -9,13 +9,7 @@ class Api::EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.author_id = current_user.id
     if @event.save
-      Job.new({
-        "name" => @event.name,
-        "description" => @event.description,
-        "start_time" => @event.start_time,
-        "end_time" => @event.end_time,
-        "time_zone" => @event.time_zone,
-        }).save
+      Job.new(event_params).save
       render "api/events/show", event: @event
     else
       render json: @event.errors.full_messages, status: 422

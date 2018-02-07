@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(event) {
     event.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push("/"));
+    this.props.login(this.state).then(() => this.props.history.push("/"));
     }
 
 
@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
               />
 
               <input
-                type="text"
+                type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
                 placeholder="password"

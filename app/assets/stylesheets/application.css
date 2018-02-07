@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  background-color: rgb(33, 33, 33);
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+}

@@ -8,7 +8,7 @@ export const fetchEvents = (id) => dispatch => (
 );
 
 export const createEvent = (newEvent) => dispatch => (
-  EventsAPIUtil.createEvent().then((newEvent) => dispatch(receiveEvent(newEvent)))
+  EventsAPIUtil.createEvent(newEvent).then((newEvent) => dispatch(receiveEvent(newEvent)))
 );
 
 const receiveAllEvents = events => ({
@@ -16,7 +16,7 @@ const receiveAllEvents = events => ({
   events
 });
 
-const receiveEvent = newEvent =. ({
+const receiveEvent = newEvent => ({
   type: RECEIVE_EVENT,
   newEvent
 })

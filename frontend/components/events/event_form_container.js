@@ -5,7 +5,7 @@ import { fetchEvents, createEvent } from "../../actions/events_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
-
+    currentUser: state.session.currentUser
   }
 }
 

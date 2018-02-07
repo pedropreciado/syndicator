@@ -6,9 +6,10 @@ export const fetchEvents = () => {
 }
 
 export const createEvent = (newEvent) => {
+  console.log(newEvent);
   return $.ajax({
     method: "POST",
     url: "/api/events",
-    data: { newEvent }
+    data: newEvent
   })
 };

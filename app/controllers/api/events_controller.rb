@@ -1,13 +1,15 @@
 class Api::EventsController < ApplicationController
 
   def index
+    p "$$$$$$$$$$$$$$$$$$$$ => #{current_user}"
     @events = current_user.events
   end
 
   def create
     @event = Event.new(event_params)
+    @event.author_id = current_user.id
     if @event.save
-      render :show
+      render "api/events/show", event: @event
     else
       render json: @event.errors.full_messages, status: 422
     end
@@ -37,14 +39,7 @@ class Api::EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:skill).permit(
-      :name,
-      :description,
-      :start_time,
-      :end_time,
-      :time_zone,
-      :author_id
-    )
+    params.permit(:name, :description, :start_date, :end_date, :start_time, :end_time, :time_zone)
   end
 
 end

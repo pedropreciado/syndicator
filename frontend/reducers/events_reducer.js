@@ -13,3 +13,5 @@ const EventsReducer = (oldState = {}, action) => {
       return oldState;
   }
 }
+
+export default EventsReducer;

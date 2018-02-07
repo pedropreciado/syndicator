@@ -86,7 +86,7 @@ class EventForm extends React.Component {
         <input
           type="time"
           onChange={this.update("start_time")}
-          value="18:00"
+          defaultValue="18:00"
           required
           />
 
@@ -94,27 +94,27 @@ class EventForm extends React.Component {
         <input
           type="time"
           onChange={this.update("end_time")}
-          value="20:00"
+          defaultValue="20:00"
           required
           />
-          <input
-              type="submit"
-              value="Create Event"
-              />
 
-          TimeZone:
-          <select onChange={this.update("time_zone")}>
-            {
-              timezones.map((name) => (
-                <option value={`${name}`}>{`${name}`}</option>
-              ))
-            }
+        TimeZone:
+        <select onChange={this.update("time_zone")}>
+          {
+            timezones.map((name) => (
+              <option value={`${name}`}>{`${name}`}</option>
+            ))
+          }
+
           </select>
+          <input
+            type="submit"
+            value="Create Event"
+            />
       </form>
       </div>
     )
   }
 }
-
 
 export default EventForm;

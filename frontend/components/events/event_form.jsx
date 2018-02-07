@@ -1,4 +1,5 @@
 import React from "react";
+let TIMEZONES = require("./timezones");
 
 class EventForm extends React.Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class EventForm extends React.Component {
   }
 
   render() {
+    let timezones = TIMEZONES.timezones;
 
     let todaysDate = new Date();
     let defaultStartTime = "06:00PM";
@@ -99,6 +101,15 @@ class EventForm extends React.Component {
               type="submit"
               value="Create Event"
               />
+
+          TimeZone:
+          <select onChange={this.update("time_zone")}>
+            {
+              timezones.map((name) => (
+                <option value={`${name}`}>{`${name}`}</option>
+              ))
+            }
+          </select>
       </form>
       </div>
     )
